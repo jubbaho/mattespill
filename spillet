@@ -1,0 +1,39 @@
+import math
+import random
+
+poeng = 0
+Liv = 3
+
+print ("Velkommen til mattespillet!")
+print ("Her kommer vil du få så mange addisjonsoppgaver du klarer. Men pass på! Du har bare 3 liv!")
+print ("Du har ") + str(Liv) + (" liv igjen.")
+print (".....")
+
+try:
+  while Liv > 1:
+    ledd1 = random.randint(1,8)
+    ledd2 = random.randint(1,18)
+    sum = ledd1 + ledd2
+    
+
+    print ("Hva er summen av ") + str(ledd1) + (" + ") + str(ledd2) + ("?")
+    svar = int(input("Skriv svaret ditt her:"))
+    
+    if svar == sum:
+      print ("Bravo!")
+      poeng = poeng + 1
+      print ("Du har nå ") + str(poeng) + (" poeng!")
+      print ("...")
+    
+    else:
+      Liv = Liv - 1
+      print ("Nei, det var ikke riktig. Du har nå ") + str(Liv) + (" liv igjen.")
+      print ("Prøv igjen!")
+      print ("Hva er summen av ") + str(ledd1) + (" + ") + str(ledd2) + ("?")
+      svar = int(input("Skriv svaret ditt her:"))
+  
+  print ("......")
+  print ("Game over!")    
+
+except ValueError:
+    print('Du må skrive et helt tall')
